@@ -1,0 +1,29 @@
+This is the folder containing the notebooks analyzing and plotting results for the Magnetic Fields paper.
+
+First, I call the function "ytmag" from the terminal, which loads the yt version and the libraries used in this analysis.
+The function looks like:
+
+function ytmag {
+    source /home/jcibanezm/codes/ytAcc2/yt-x86_64/bin/activate
+    export PYTHONPATH='/home/jcibanezm/codes/DustCharge:/home/jcibanezm/codes/StratBox/MagneticClouds/Functions/':$PYTHONPATH
+    echo "-----------------------------------------------------------------------------------------"
+    echo "Hi Juan. welcome back..."
+    echo " "
+    echo "Activating the yt and python session for the Magnetic clouds paper. Linking libraries with functions used in the calculations here. check PYTHONPATH for the location of the modules."
+    echo ""
+    echo "----------------------------------------------------------------------------------------"
+}
+
+Now, about the folders:
+
+Force Calculation:
+	contains two files, a notebook, and a python code with the same name, which does the same as the notebook but can be send to run on the background. The force calculation derives a lot of new fields, e.g. magnetic field gradient in x, y, and z, pressure gradients, etc. and computes the forces, in cgs units, felt by each cell, magnetic, thermal and gravitational. Then saves them to a binary file.
+
+Binary files are saved to: /data/gamera/jcibanezm/StratBox/MagneticCloudsPaper/PickleClouds/"Cloud name"
+
+Relative Orientations:
+	Contains the development notebook to generate the HRO figure and Figure 2. Contains a python file called "Routine_Figure2.py" which loops over the snapshots and generates Figure 2 for each snapshot.
+
+
+PaperPlots:
+	Contains the notebooks reading the saved binary files and making plots for the paper.
